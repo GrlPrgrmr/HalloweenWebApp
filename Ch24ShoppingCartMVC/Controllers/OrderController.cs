@@ -18,7 +18,7 @@ namespace Ch24ShoppingCartMVC.Controllers {
                 //CALL THE METHOD GetProductList 
                 var list = order.GetProductsList();
                 //CREATE THE SelectList products
-                products = new SelectList(list,"Products" , "Name", id);
+                products = new SelectList(list,"ProductID" , "Name", id);
             } 
             //if no URL parameter, get first product from list and refresh
             if (string.IsNullOrEmpty(id)) {
@@ -26,7 +26,7 @@ namespace Ch24ShoppingCartMVC.Controllers {
                 //ASSIGN products to temp data called products
                 TempData["products"] = products;
                 //Redirect to the action method Index of the Order controller with id parameter.
-                return RedirectToAction("Index", id);
+                return RedirectToAction("Index", new { id = id});
             }
             else { //get selected product and return in view method
                 //Call the method GetOrderInfo to get an OrderViewModel object called model
@@ -44,7 +44,7 @@ namespace Ch24ShoppingCartMVC.Controllers {
         {
             string pID = collection["ddlProducts"];
             //Redirect to the action method index of the Order controller with parameter the id assigned to pID
-            return RedirectToAction("Index", pID);
+            return RedirectToAction("Index",new { pID=pID});
         }      
     }
 }
