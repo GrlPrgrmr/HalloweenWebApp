@@ -7,6 +7,7 @@ using Ch24ShoppingCartMVC.Models;
 namespace Ch24ShoppingCartMVC.Models{
     public class CartModel
     {
+        //Comment Added by Prerna
         //Data Access methods 
         private List<ProductViewModel> GetCartFromDataStore()
         {
