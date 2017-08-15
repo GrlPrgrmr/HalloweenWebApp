@@ -7,6 +7,8 @@ using Ch24ShoppingCartMVC.Models;
 namespace Ch24ShoppingCartMVC.Models {
     public class CartViewModel
     {
+      
+        public int TotalPrice { get; set; }
         public List<ProductViewModel> Cart { get; set; }
         public ProductViewModel AddedProduct { get; set; }
     }

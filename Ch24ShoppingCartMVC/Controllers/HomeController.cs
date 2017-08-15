@@ -18,7 +18,7 @@ namespace Ch24ShoppingCartMVC.Controllers {
         [HttpGet]
         public ViewResult Contact() {
             //CREATE A ContactViewModel OBJECT call model  model
-            ContactViewModel model = (ContactViewModel)TempData["contact"];
+            ContactViewModel model = new ContactViewModel();
 
             //Pass model to View
             return View(model);

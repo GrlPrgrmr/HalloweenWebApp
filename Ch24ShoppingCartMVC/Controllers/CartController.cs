@@ -15,6 +15,7 @@ namespace Ch24ShoppingCartMVC.Controllers {
         {
             return RedirectToAction("List/");
         }
+
         [HttpGet]
         public ViewResult List()
         {
@@ -22,11 +23,12 @@ namespace Ch24ShoppingCartMVC.Controllers {
             //if the model is null, then call the method GetCart
              if(model==null)
             {
-                cart.GetCart();
+               model = cart.GetCart();
             }
             //Passing model to View
-            return View(cart);
+            return View(model);
         }
+
         [HttpPost]
         public RedirectToRouteResult List(OrderViewModel order)
         {
